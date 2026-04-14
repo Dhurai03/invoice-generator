@@ -107,4 +107,25 @@ const updateTemplate = async (req, res) => {
   try {
     const template = await Template.findByIdAndUpdate(
       req.params.id,
-  
+      { ...req.body },
+      { new: true, runValidators: true }
+    );
+    if (!template) return res.status(404).json({ success: false, message: 'Template not found' });
+    res.json({ success: true, data: template });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+// DELETE /api/templates/:id
+const deleteTemplate = async (req, res) => {
+  try {
+    const template = await Template.findByIdAndDelete(req.params.id);
+    if (!template) return res.status(404).json({ success: false, message: 'Template not found' });
+    res.json({ success: true, message: 'Template deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+module.exports = { getTemplates, getTemplateById, uploadTemplate, createTemplate, updateTemplate, deleteTemplate };
