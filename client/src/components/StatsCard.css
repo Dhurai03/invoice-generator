@@ -1,0 +1,74 @@
+.stats-card {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-6);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+.stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+.stats-card:hover { border-color: var(--color-border-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.stats-card:hover::before { opacity: 1; }
+
+.stats-card--primary::before { background: var(--gradient-primary); }
+.stats-card--success::before { background: linear-gradient(90deg, var(--color-success), hsl(142, 72%, 65%)); }
+.stats-card--warning::before { background: linear-gradient(90deg, var(--color-warning), hsl(38, 92%, 70%)); }
+.stats-card--danger::before { background: linear-gradient(90deg, var(--color-danger), hsl(0, 85%, 75%)); }
+.stats-card--info::before { background: linear-gradient(90deg, var(--color-info), hsl(210, 85%, 75%)); }
+
+.stats-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+.stats-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+.stats-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stats-card-icon--primary { background: hsla(245, 85%, 65%, 0.15); color: var(--color-primary-light); }
+.stats-card-icon--success { background: var(--color-success-bg); color: var(--color-success); }
+.stats-card-icon--warning { background: var(--color-warning-bg); color: var(--color-warning); }
+.stats-card-icon--danger { background: var(--color-danger-bg); color: var(--color-danger); }
+.stats-card-icon--info { background: var(--color-info-bg); color: var(--color-info); }
+
+.stats-card-value {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-2);
+}
+
+.stats-card-trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.trend-up { color: var(--color-success); }
+.trend-down { color: var(--color-danger); }

@@ -1,0 +1,98 @@
+.line-items-wrapper {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+.line-items-table-container { overflow-x: auto; }
+
+.line-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+.line-items-table th {
+  padding: 10px 14px;
+  background: var(--color-surface-2);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+.line-items-table th.col-qty,
+.line-items-table th.col-rate,
+.line-items-table th.col-amount { text-align: right; }
+
+.line-item-row td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+  transition: background var(--transition-fast);
+}
+.line-item-row:last-child td { border-bottom: none; }
+.line-item-row:hover td { background: var(--color-surface-2); }
+
+.col-desc { width: 50%; }
+.col-qty { width: 10%; }
+.col-rate { width: 18%; }
+.col-amount { width: 16%; text-align: right; }
+.col-action { width: 6%; text-align: center; }
+
+.line-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  font-size: 13px;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+.line-input:focus {
+  background: var(--color-surface-3);
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary-glow);
+}
+.line-input.text-center { text-align: center; }
+
+.rate-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.currency-symbol { font-size: 12px; color: var(--text-muted); }
+
+.item-amount {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding-right: 4px;
+}
+
+.remove-item-btn { color: var(--text-muted); }
+.remove-item-btn:hover { color: var(--color-danger); }
+
+.line-items-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+}
+.add-item-btn { color: var(--color-primary-light); }
+.add-item-btn:hover { color: var(--color-primary); }
+
+.subtotal-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.subtotal-label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.subtotal-value { font-size: 16px; font-weight: 700; color: var(--text-primary); }

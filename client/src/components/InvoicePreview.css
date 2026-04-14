@@ -1,0 +1,145 @@
+.invoice-preview {
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 740px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.inv-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 32px 36px 24px;
+  background: #f8fafc;
+  gap: 20px;
+}
+.inv-company { display: flex; align-items: flex-start; gap: 14px; }
+.inv-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+.inv-logo-placeholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+}
+.inv-company-name { font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+.inv-company-details { font-size: 12px; color: #64748b; line-height: 1.7; }
+
+.inv-meta { text-align: right; flex-shrink: 0; }
+.inv-title { font-size: 28px; font-weight: 900; color: #0f172a; letter-spacing: -0.04em; }
+.inv-number { font-size: 16px; font-weight: 600; color: #64748b; margin-top: 2px; }
+.inv-status-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: 1px solid;
+}
+
+.inv-accent-bar { height: 4px; }
+
+.inv-bill-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px 36px;
+  gap: 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.inv-bill-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #94a3b8; margin-bottom: 6px; }
+.inv-bill-name { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.inv-bill-detail { font-size: 12px; color: #64748b; line-height: 1.7; }
+
+.inv-dates { min-width: 220px; }
+.inv-date-row { display: flex; justify-content: space-between; gap: 24px; margin-bottom: 8px; }
+.inv-date-label { font-size: 12px; color: #94a3b8; font-weight: 500; }
+.inv-date-value { font-size: 12px; color: #1e293b; font-weight: 600; }
+
+/* Table */
+.inv-table { width: 100%; border-collapse: collapse; }
+.inv-th {
+  padding: 11px 36px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #475569;
+  text-align: left;
+}
+.inv-th-center { text-align: center; }
+.inv-th-right { text-align: right; }
+.inv-td { padding: 11px 36px; color: #334155; border-bottom: 1px solid #f1f5f9; font-size: 13px; }
+.inv-td-center { text-align: center; }
+.inv-td-right { text-align: right; }
+.inv-td-amount { font-weight: 600; color: #1e293b; }
+.inv-tr:hover td { background: #f8fafc; }
+
+/* Totals */
+.inv-totals { display: flex; justify-content: flex-end; padding: 20px 36px; }
+.inv-totals-box { min-width: 260px; }
+.inv-total-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 6px 0;
+  font-size: 13px;
+  color: #64748b;
+}
+.inv-discount { color: #22c55e; }
+.inv-grand-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 12px 0 6px;
+  margin-top: 8px;
+  border-top: 2px solid;
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Notes */
+.inv-footer-notes { padding: 20px 36px; border-top: 1px solid #e2e8f0; display: flex; gap: 32px; }
+.inv-notes-block { flex: 1; }
+.inv-notes-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.inv-notes-text { font-size: 12px; color: #64748b; line-height: 1.7; white-space: pre-line; }
+
+/* Footer bar */
+.inv-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 36px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Print styles */
+@media print {
+  .invoice-preview {
+    box-shadow: none;
+    border-radius: 0;
+    max-width: none;
+  }
+}

@@ -1,0 +1,72 @@
+.create-template-layout { display: flex; gap: var(--space-6); }
+.create-template-form { flex: 1; min-width: 0; }
+.with-preview .create-template-form { max-width: 55%; }
+
+.color-picker-row { display: flex; align-items: center; gap: var(--space-3); }
+.color-input {
+  width: 44px;
+  height: 40px;
+  padding: 2px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.fields-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+.field-row-inputs { display: grid; grid-template-columns: 1fr 1fr 100px 100px; gap: var(--space-3); flex: 1; }
+.field-row-actions { display: flex; align-items: center; gap: var(--space-3); flex-shrink: 0; }
+.field-required-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.field-required-toggle input { accent-color: var(--color-primary); }
+
+.template-preview-panel {
+  width: 45%;
+  flex-shrink: 0;
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-8));
+  height: fit-content;
+  max-height: calc(100vh - var(--navbar-height) - var(--space-16));
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.template-preview-header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+}
+.template-preview-scroll {
+  overflow-y: auto;
+  padding: var(--space-4);
+  background: var(--color-bg);
+}
+
+@media (max-width: 1100px) {
+  .create-template-layout { flex-direction: column; }
+  .with-preview .create-template-form { max-width: 100%; }
+  .template-preview-panel { width: 100%; position: static; }
+}
+@media (max-width: 768px) {
+  .field-row-inputs { grid-template-columns: 1fr 1fr; }
+}

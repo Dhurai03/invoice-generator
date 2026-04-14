@@ -1,0 +1,75 @@
+.dropzone {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+.dropzone:hover, .dropzone--active {
+  border-color: var(--color-primary);
+  background: hsla(245, 85%, 65%, 0.05);
+  box-shadow: 0 0 0 4px var(--color-primary-glow);
+}
+.dropzone--reject {
+  border-color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.dropzone-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-xl);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all var(--transition-base);
+}
+.dropzone:hover .dropzone-icon, .dropzone--active .dropzone-icon {
+  background: hsla(245, 85%, 65%, 0.15);
+  border-color: var(--color-primary);
+  color: var(--color-primary-light);
+}
+
+.dropzone-content { display: flex; flex-direction: column; gap: 6px; }
+.dropzone-text { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+.dropzone-text--error { color: var(--color-danger); }
+.dropzone-subtext { font-size: 13px; color: var(--text-secondary); }
+.dropzone-link { color: var(--color-primary-light); font-weight: 600; }
+.dropzone-hint { font-size: 12px; color: var(--text-muted); }
+
+/* File Preview */
+.dropzone-file-preview {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+}
+.dropzone-file-preview:hover { border-color: var(--color-border-hover); }
+.file-preview-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-light);
+  flex-shrink: 0;
+}
+.file-preview-info { flex: 1; min-width: 0; }
+.file-preview-name { display: block; font-size: 14px; font-weight: 600; color: var(--text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-preview-size { font-size: 12px; color: var(--text-muted); }
+.file-preview-remove { flex-shrink: 0; }
